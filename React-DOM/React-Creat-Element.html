@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        /*
+            react.createElement(type,props,children,...) : từ đối số thứ 3 trở đi tất cả đều là children
+            Nội dung của thẻ thì để ở children
+        */
+        const divReact = React.createElement(
+            "div",
+            {className:"post-item"},
+            React.createElement(
+                'h2',
+                {title:"Học ReactJS tại F8" },
+                "Học ReactJS",
+            ),
+            React.createElement(
+                "p",
+                null,
+                "Học ReactJS từ cơ bản tới nâng cao",
+            )
+        )
+        
+        
+        
+        //Dom
+        const divDom = document.createElement("div")
+        divDom.className = "post-item"
+        
+        const h2Dom = document.createElement('h2')
+        h2Dom.title = "Học ReactJS tại F8"
+        h2Dom.innerText = "Học ReactJS"
+        divDom.appendChild(h2Dom)
+
+        const pDom = document.createElement("p")
+        pDom.innerText = "Học ReactJS từ cơ bản tới nâng cao"
+
+        divDom.appendChild(pDom)
+
+        document.body.appendChild(divDom)
+
+    </script>
+    
+</body>
+</html>
