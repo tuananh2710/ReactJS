@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'root'></div>
+    <script>
+        /*
+            react.createElement(type,props,children,...) : từ đối số thứ 3 trở đi tất cả đều là children
+            Nội dung của thẻ thì để ở children
+        */
+        const divReact = React.createElement(
+            "div",
+            {className:"post-item"},
+            React.createElement(
+                'h2',
+                {title:"Học ReactJS tại F8" },
+                "Học ReactJS",
+            ),
+            React.createElement(
+                "p",
+                null,
+                "Học ReactJS từ cơ bản tới nâng cao",
+            )
+        )
+        // Thẻ h1
+        const h1React = React.createElement(
+            "h1", // type
+            {
+                className:"heading",  // props
+                title:"Hello",
+            },
+            "Hello guys!"   // children
+        )
+        // Thẻ ul
+        const ulReact = React.createElement(
+            "ul",  // type
+            null,   // props
+            React.createElement( // thẻ li // children
+                'li',
+                null,           // props
+                "Javascript",
+            ),
+            React.createElement( // thẻ li // children
+                'li',           
+                null,       // props
+                'ReactJS',
+            ),
+        )
+
+
+
+        // Get root
+        const root = document.getElementById('root')
+        // Render UI
+        ReactDOM.render([h1React,ulReact,divReact],root)
+    </script>
+</body>
+</html>
